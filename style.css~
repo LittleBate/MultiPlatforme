@@ -1,0 +1,37 @@
+html
+{
+	background-image:url('bckg.jpg');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center;
+}
+
+body
+{
+	background:transparent;
+}
+
+input
+{
+	margin-bottom:10px;
+}
+
+h1
+{
+	color:white;
+}
+
+label
+{
+	color:white;
+}
+
+p
+{
+	color:white;
+}
+
+div.case
+{
+	margin-bottom:30px;
+}
