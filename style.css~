@@ -26,6 +26,11 @@ label
 	color:white;
 }
 
+label.dark
+{
+	color:black;
+}
+
 p
 {
 	color:white;

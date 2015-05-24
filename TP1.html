@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
 	<script src="app.js"></script>
 	<script src="controllers.js"></script>
 	<style>
@@ -17,6 +18,15 @@
 			margin-right:10px;
 			margin-left:10px;
 		}
+		.transparent
+		{
+			background-color:rgba(0, 0, 0, 0.5);
+		}
+		.margin
+		{
+			margin-left:10px;
+			margin-right:10px;
+		}
 	</style>
 </head>
 <body ng-app="app" ng-controller="SearchController as search">
@@ -24,7 +34,6 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<h1>Trouvez votre covoiturage</h1>
-				<h2>{{search.title}}</h2>
 			</div>
 		</div>
 		<div class="row case">
@@ -45,6 +54,23 @@
 			<div class="col-sm-12">
 				<p class="text-center">20 millions de membres avec profil vérifié pour voyager en toute sérénité </p>
 			</div>
+		</div>
+		<div class="row case">
+			<ul class="list-group margin">
+				<li class="list-group-item transparent" ng-repeat="trajet in search.trajets">
+					<div class="row">
+						<div class="col-sm-4">
+							<label >Depart : {{trajet.depart}}</label>
+						</div>
+						<div class="col-sm-4">
+							<label >Arrive : {{trajet.arrive}}</label>
+						</div>
+						<div class="col-sm-4">
+							<label >Date : {{trajet.date}}</label>
+						</div>
+					</div>
+				</li>
+			</ul>
 		</div>
 		<div class="row">
 			<div class="col-sm-3 case well">
