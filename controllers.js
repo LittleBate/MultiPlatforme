@@ -1,7 +1,40 @@
 angular.module('app').controller("SearchController", function(){
+
 	var viewModel = this;
 
-	viewModel.test = "test";
+	viewModel.showResult = false;
+
+	viewModel.depart = "";
+
+	viewModel.arrive = "";
+
+	viewModel.date = "";
+
+	viewModel.search = function()
+	{
+		viewModel.trajetCherche = viewModel.trajets;
+		angular.forEach(viewModel.trajets, function(trajet)
+			{
+				if(viewModel.depart == "" || viewModel.depart != trajet.depart)
+				{
+					viewModel.trajetCherche.remove(trajet);
+				}
+				if(viewModel.arrive == "" || viewModel.arrive != trajet.arrive)
+				{
+					viewModel.trajetCherche.remove(trajet);
+				}
+				if(viewModel.date == "" || viewModel.date != trajet.date)
+				{
+					viewModel.trajetCherche.remove(trajet);
+				}
+			});
+		viewModel.arrive = "";
+		viewModel.depart = "";
+		viewModel.date = "";
+		viewModel.showResult = true;
+	}
+
+	viewModel.trajetCherche = [];
 
 	viewModel.trajets = [
 		{

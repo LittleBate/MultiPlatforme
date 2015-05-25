@@ -21,8 +21,6 @@
 		.transparent
 		{
 			background-color:rgba(0, 0, 0, 0.5);
-			border:1px;
-			border-color:rgba(255, 255, 255,0.5);
 		}
 		.margin
 		{
@@ -40,16 +38,16 @@
 		</div>
 		<div class="row case">
 			<div class="col-sm-3 inputmargin">
-				<input type="text" class="form-control" placeholder="De"/>	
+				<input type="text" class="form-control" placeholder="De" ng-model="search.depart"/>	
 			</div>
 			<div class="col-sm-3 inputmargin">
-				<input type="text" class="form-control" placeholder="A"/>	
+				<input type="text" class="form-control" placeholder="A" ng-model="search.arrive"/>		
 			</div>
 			<div class="col-sm-3 inputmargin">
-				<input type="text" class="form-control" placeholder="jj/mm/aaaa"/>	
+				<input type="text" class="form-control" placeholder="jj/mm/aaaa" ng-model="search.date"/>	
 			</div>
 			<div class="col-sm-3">
-				<button type="button" class="btn btn-default">Rechercher</button>
+				<button type="button" class="btn btn-default" ng-click="search.search()">Rechercher</button>
 			</div>
 		</div>
 		<div class="row case">
@@ -57,7 +55,7 @@
 				<p class="text-center">20 millions de membres avec profil vérifié pour voyager en toute sérénité </p>
 			</div>
 		</div>
-		<div class="row case">
+		<div class="row case" ng-if="search.showResult">
 			<ul class="list-group margin">
 				<li class="list-group-item transparent" ng-repeat="trajet in search.trajets">
 					<div class="row">
