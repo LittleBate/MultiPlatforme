@@ -48,6 +48,7 @@
 			</div>
 			<div class="col-sm-3">
 				<button type="button" class="btn btn-default" ng-click="search.search()">Rechercher</button>
+				<button type="buttonz" class="btn btn-default" ng-click="search.clear()">Clear</button>
 			</div>
 		</div>
 		<div class="row case">
@@ -57,7 +58,7 @@
 		</div>
 		<div class="row case" ng-if="search.showResult">
 			<ul class="list-group margin">
-				<li class="list-group-item transparent" ng-repeat="trajet in search.trajets">
+				<li class="list-group-item transparent" ng-repeat="trajet in search.trajetCherche">
 					<div class="row">
 						<div class="col-sm-4">
 							<label >Depart : {{trajet.depart}}</label>
